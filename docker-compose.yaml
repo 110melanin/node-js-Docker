@@ -4,10 +4,10 @@ services:
   #     image: 668178087276.dkr.ecr.eu-west-2.amazonaws.com/my-app:v1
  #      ports: 
 #         - 3000:3000
-       environment:
-         - MONGO_DB_USERNAME=admin
-         - MONGO_DB_PWD=password
-     mongodb:
+ #       environment:
+ #        - MONGO_DB_USERNAME=admin
+ #        - MONGO_DB_PWD=password
+      mongodb:
         image: mongo:latest
         container_name: mongodb
         ports:
@@ -17,7 +17,7 @@ services:
          - MONGO_INITDB_ROOT_PASSWORD=password
         volumes:
          - docker-data:/data/db
-     mongo-express:
+      mongo-express:
         image: mongo-express:latest
         restart: unless-stopped
         ports:
